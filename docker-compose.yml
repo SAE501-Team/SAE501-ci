@@ -10,6 +10,8 @@ services:
     command: --explicit_defaults_for_timestamp
     networks:
       - prestashop_network
+    volumes:
+      - ./docker/db:/var/lib/mysql
 
   prestashop:
     container_name: prestashop
@@ -26,6 +28,8 @@ services:
       DB_PASSWD: mmi
     networks:
       - prestashop_network
+    volumes:
+      - ./docker/prestashop:/var/www/html
 
   phpmyadmin:
     container_name: phpmyadmin
