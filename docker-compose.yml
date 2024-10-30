@@ -1,0 +1,46 @@
+version: "3"
+services:
+  mysql:
+    container_name: db
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: mmi
+      MYSQL_DATABASE: behh501
+    command: --explicit_defaults_for_timestamp
+    networks:
+      - prestashop_network
+
+  prestashop:
+    container_name: prestashop
+    image: prestashop/prestashop:8.1.7
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+    environment:
+      DB_SERVER: db
+      DB_NAME: behh501
+      DB_USER: root
+      DB_PASSWD: mmi
+    networks:
+      - prestashop_network
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: mmi
+    networks:
+      - prestashop_network
+
+networks:
+  prestashop_network:
