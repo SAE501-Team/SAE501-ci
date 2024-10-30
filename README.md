@@ -38,7 +38,13 @@ dans la racine du repertoire:
 make up
 ```
 
-### Check si les images tournent
+### Check si les images tournent  
+
+```
+make on
+```
+
+### Eteindre l'environnement de dev  
 
 ```
 make on
