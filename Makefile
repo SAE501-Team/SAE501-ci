@@ -4,5 +4,7 @@ upwatch:
 	docker compose up
 down:
 	docker compose down
-on:
+restart:
+	docker compose restart
+ps:
 	docker ps
