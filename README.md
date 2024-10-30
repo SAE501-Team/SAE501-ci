@@ -47,5 +47,5 @@ make down
 ### Check si les images tournent
 
 ```
-make on
+make ps
 ```
