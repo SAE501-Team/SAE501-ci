@@ -1,7 +1,0 @@
-FROM prestashop/prestashop:8.1.7
-
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd \
-    && docker-php-ext-install mysqli
-
-COPY php.ini /usr/local/etc/php/conf.d/
