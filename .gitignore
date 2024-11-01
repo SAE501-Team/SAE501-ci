@@ -4,3 +4,5 @@ docker/db/mysql.sock
 # Ignore other temporary files
 docker/db/*.cnf
 docker/db/*.opt
+
+creds.txt

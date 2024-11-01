@@ -1,6 +1,6 @@
 services:
-  mysql:
-    container_name: db
+  db:
+    container_name: mysql
     image: mysql:5.7
     restart: unless-stopped
     environment:
@@ -14,10 +14,13 @@ services:
 
   prestashop:
     container_name: prestashop
-    image: prestashop/prestashop:8.1.7
+    # image: prestashop/prestashop:8.1.7
+    build:
+      context: ./images/prestashop/8.1.7
+      dockerfile: dockerfile
     restart: unless-stopped
     depends_on:
-      - mysql
+      - db
     ports:
       - "8080:80"
     environment:
@@ -28,14 +31,14 @@ services:
     networks:
       - prestashop_network
     volumes:
-      - ./docker/prestashop:/var/www/html
+      - ./docker/html:/var/www/html
 
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     restart: unless-stopped
     depends_on:
-      - mysql
+      - db
     ports:
       - "8081:80"
     environment:
