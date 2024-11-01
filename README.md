@@ -10,6 +10,12 @@ Répertoire pour le développement de la boutique PrestaShop
 
 ## Installations
 
+### Credentials
+
+https://drive.google.com/file/d/1-kgMVbGFGTQWCO6gcVVqtn8Vk0U9xDeO/view?usp=sharing
+
+Le mdp de l'archive est en épinglé dans le groupe discord de la SAE
+
 ### Docker/compose
 
 https://www.docker.com/products/docker-desktop/
