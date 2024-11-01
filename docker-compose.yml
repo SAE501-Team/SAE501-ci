@@ -27,6 +27,8 @@ services:
       DB_PASSWD: mmi
     volumes:
       - ./docker/html:/var/www/html
+    command: >
+      bash -c "chown -R www-data:www-data /var/www/html/"
     networks:
       - prestashop_network
 
