@@ -14,7 +14,7 @@ services:
 
   prestashop:
     container_name: prestashop
-    image: prestashop/prestashop:8.1.7
+    image: prestashop/prestashop:8.1.7-apache
     restart: unless-stopped
     depends_on:
       - db
