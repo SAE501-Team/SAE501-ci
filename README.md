@@ -34,6 +34,24 @@ choco install make -y --force
 
 Vous pouvez maintenant utiliser make sur Windows
 
+### Cloner le repository
+
+```
+git clone https://github.com/SAE501-Team/SAE501-ci
+```
+
+puis:
+
+```
+cd SAE501-ci
+```
+
+enfin:
+
+```
+git submodule update --init --recursive
+```
+
 ## Developpement
 
 ### Démarrer l'environnement de dev
