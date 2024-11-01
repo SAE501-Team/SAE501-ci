@@ -7,17 +7,14 @@ services:
       MYSQL_ROOT_PASSWORD: mmi
       MYSQL_DATABASE: behh501
     command: --explicit_defaults_for_timestamp
-    networks:
-      - prestashop_network
     volumes:
       - ./docker/db:/var/lib/mysql
+    networks:
+      - prestashop_network
 
   prestashop:
     container_name: prestashop
-    # image: prestashop/prestashop:8.1.7
-    build:
-      context: ./images/prestashop/8.1.7
-      dockerfile: dockerfile
+    image: prestashop/prestashop:8.1.7
     restart: unless-stopped
     depends_on:
       - db
@@ -28,10 +25,10 @@ services:
       DB_NAME: behh501
       DB_USER: root
       DB_PASSWD: mmi
-    networks:
-      - prestashop_network
     volumes:
       - ./docker/html:/var/www/html
+    networks:
+      - prestashop_network
 
   phpmyadmin:
     container_name: phpmyadmin
