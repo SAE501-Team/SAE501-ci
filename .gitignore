@@ -24,6 +24,6 @@ docker/db/*.frm
 docker/db/*.MYD
 docker/db/*.MYI
 
+# Custom
 creds.txt
-
 docker/html
