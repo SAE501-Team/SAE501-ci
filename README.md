@@ -52,6 +52,11 @@ enfin:
 git submodule update --init --recursive
 ```
 
+### Pour le chat SAV
+
+- Repertoire: https://github.com/SAE501-Team/SAE-chat
+- Module Presta: https://github.com/SAE501-Team/SAE-chat/tree/main/server/assets 
+
 ## Developpement
 
 ### Démarrer l'environnement de dev
