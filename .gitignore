@@ -4,6 +4,25 @@ docker/db/mysql.sock
 # Ignore other temporary files
 docker/db/*.cnf
 docker/db/*.opt
+docker/db/behh501/ps_connections_source.ibd
+docker/db/ib_logfile0
+docker/db/ibdata1
+docker/db/ibtmp1
+
+# Ignore MySQL temporary and log files
+docker/db/ib_logfile*
+docker/db/ib_buffer_pool
+docker/db/ib_buffer_pool_cache
+docker/db/*.err
+docker/db/*.log
+docker/db/ib_*
+docker/db/tc.log
+docker/db/#*
+
+# Ignore all files with .frm, .MYD, .MYI (MySQL table definitions and data)
+docker/db/*.frm
+docker/db/*.MYD
+docker/db/*.MYI
 
 creds.txt
 
