@@ -18,6 +18,11 @@ docker/db/*.log
 docker/db/ib_*
 docker/db/tc.log
 docker/db/#*
+docker/db/behh501/ps_connections.ibd
+docker/db/behh501/ps_connections_source.ibd
+docker/db/ib_logfile0
+docker/db/ibdata1
+docker/db/ibtmp1
 
 # Ignore all files with .frm, .MYD, .MYI (MySQL table definitions and data)
 docker/db/*.frm
