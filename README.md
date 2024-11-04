@@ -12,7 +12,7 @@ Répertoire pour le développement de la boutique PrestaShop
 
 ### Credentials
 
-le fichier creds.zip du repo
+Le fichier creds.zip du repo
 
 Le mdp de l'archive est en épinglé dans le groupe discord de la SAE
 
@@ -34,7 +34,9 @@ choco install make -y --force
 
 Vous pouvez maintenant utiliser make sur Windows
 
-### Cloner le repository
+### Cloner le repository  
+
+Pour les devs sous Windows, cloner le projet dans le WSL directement
 
 ```
 git clone https://github.com/SAE501-Team/SAE501-ci
@@ -55,7 +57,7 @@ git submodule update --init --recursive
 ### Pour le chat SAV
 
 - Repertoire: https://github.com/SAE501-Team/SAE-chat
-- Module Presta: https://github.com/SAE501-Team/SAE-chat/tree/main/server/assets 
+- Module Presta: https://github.com/SAE501-Team/SAE-chat/tree/main/server/assets
 
 ## Developpement
 
