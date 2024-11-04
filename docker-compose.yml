@@ -25,10 +25,9 @@ services:
       DB_NAME: behh501
       DB_USER: root
       DB_PASSWD: mmi
-    command: bash -c "chown -R www-data:www-data /var/www/html/"
+    # command: bash -c "chown -R www-data:www-data /var/www/html/"
     volumes:
       - ./docker/html:/var/www/html
-    # command: bash -c "chown -R www-data:www-data /var/www/html/"/
     networks:
       - prestashop_network
 
