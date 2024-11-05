@@ -4,11 +4,11 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: mmi
-      MYSQL_DATABASE: behh501
+      MYSQL_ROOT_PASSWORD: ${ENV_PASSWORD}
+      MYSQL_DATABASE: ${ENV_USER}
     command: --explicit_defaults_for_timestamp
     volumes:
-      - ./docker/db:/var/lib/mysql
+      - dbdata:/var/lib/mysql
     networks:
       - prestashop_network
 
@@ -22,12 +22,20 @@ services:
       - "8080:80"
     environment:
       DB_SERVER: db
-      DB_NAME: behh501
-      DB_USER: root
-      DB_PASSWD: mmi
+      DB_NAME: ${ENV_USER}
+      DB_USER: ${ENV_DBUSER}
+      DB_PASSWD: ${ENV_PASSWORD}
+      PS_DOMAIN: ${ENV_DOMAIN}
+      PS_FOLDER_ADMIN: adminbehh501
+      PS_COUNTRY: fr
+      ADMIN_MAIL: ${ENV_ADMIN_MAIL}
+      ADMIN_PASSWD: ${ENV_ADMIN_PASSWD}
+      PS_INSTALL_AUTO: 1
     # command: bash -c "chown -R www-data:www-data /var/www/html/"
     volumes:
-      - ./docker/html:/var/www/html
+      - psdata:/var/www/html
+      - ./docker/html/themes:/var/www/html/themes
+      - ./docker/html/modules:/var/www/html/modules
     networks:
       - prestashop_network
 
@@ -46,5 +54,8 @@ services:
     networks:
       - prestashop_network
 
+volumes:
+  dbdata:
+  psdata:
 networks:
   prestashop_network:
