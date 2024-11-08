@@ -39,19 +39,7 @@ Vous pouvez maintenant utiliser make sur Windows
 Pour les devs sous Windows, cloner le projet dans le WSL directement
 
 ```
-git clone https://github.com/SAE501-Team/SAE501-ci
-```
-
-puis:
-
-```
-cd SAE501-ci
-```
-
-enfin:
-
-```
-git submodule update --init --recursive
+git clone --recursive https://github.com/SAE501-Team/SAE501-ci
 ```
 
 ### Pour le chat SAV
