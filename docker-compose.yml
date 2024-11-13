@@ -9,8 +9,6 @@ services:
     command: --explicit_defaults_for_timestamp
     volumes:
       - dbdata:/var/lib/mysql
-    networks:
-      - prestashop_network
 
   prestashop:
     container_name: prestashop
@@ -34,10 +32,10 @@ services:
     # command: bash -c "chown -R www-data:www-data /var/www/html/"
     volumes:
       - psdata:/var/www/html
+      # TODO: Add specific theme and modules
+      # TODO: Correct subdirs
       - ./docker/html/themes:/var/www/html/themes
       - ./docker/html/modules:/var/www/html/modules
-    networks:
-      - prestashop_network
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -51,11 +49,7 @@ services:
       PMA_HOST: db
       PMA_USER: root
       PMA_PASSWORD: mmi
-    networks:
-      - prestashop_network
 
 volumes:
   dbdata:
   psdata:
-networks:
-  prestashop_network:
