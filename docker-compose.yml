@@ -9,7 +9,7 @@ services:
     command: --explicit_defaults_for_timestamp
     volumes:
       - dbdata:/var/lib/mysql
-
+      
   prestashop:
     container_name: prestashop
     image: prestashop/prestashop:8.1.7-apache
@@ -32,9 +32,8 @@ services:
     # command: bash -c "chown -R www-data:www-data /var/www/html/"
     volumes:
       - psdata:/var/www/html
-      # TODO: Add specific theme and modules
-      # TODO: Correct subdirs
-      - ./docker/html/themes:/var/www/html/themes
+      - ./docker/html/themes/classic:/var/www/html/themes/classic
+      - ./docker/html/themes/themenfant_BEHH:/var/www/html/themes/themenfant_BEHH
       - ./docker/html/modules:/var/www/html/modules
 
   phpmyadmin:
