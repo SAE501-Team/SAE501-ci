@@ -32,9 +32,9 @@ services:
     # command: bash -c "chown -R www-data:www-data /var/www/html/"
     volumes:
       - psdata:/var/www/html
-      - ./docker/html/themes/classic:/var/www/html/themes/classic
-      - ./docker/html/themes/themenfant_BEHH:/var/www/html/themes/themenfant_BEHH
-      - ./docker/html/modules:/var/www/html/modules
+      - ./html/themes/classic:/var/www/html/themes/classic
+      - ./html/themes/themenfant_BEHH:/var/www/html/themes/themenfant_BEHH
+      - ./html/modules:/var/www/html/modules
 
   phpmyadmin:
     container_name: phpmyadmin
