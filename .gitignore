@@ -32,3 +32,4 @@ docker/db/*.MYI
 # Custom
 creds.txt
 docker/html
+.idea/
